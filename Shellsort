@@ -1,0 +1,21 @@
+import random
+
+mylist = random.sample(range(1, 170), 18)
+
+print('=====Shell sort=====')
+print (f'Sebelum Disorting : {mylist}') 
+
+def shellsort(array, n):
+    interval = n // 2
+    while interval > 0:        
+        for i in range(interval,n):
+            temp = array[i]                   
+            while i >= interval and array[i - interval] > temp:                
+                array[i] = array[i - interval]                
+                i -= interval
+            array[i] = temp
+        interval //= 2
+
+size = len(mylist)
+shellsort(mylist, size)
+print(f'Setelah Disorting : {mylist}')
