@@ -1,0 +1,26 @@
+import random
+bilangan = []
+for i in range(16):
+    angka = random.randint(1, 100) 
+    bilangan.append(angka)
+
+print('=====Quick sort=====')
+print(f"List Sebelum di Sorting {bilangan}")
+
+def quickSort(bilangan):
+    if len(bilangan) <= 1:
+        return bilangan
+    else:
+        pivot = bilangan[0]
+
+        left = [x for x in bilangan[1:] if x <= pivot] 
+        
+        right = [x for x in bilangan[1:] if x >= pivot]
+        
+        return quickSort(left) + [pivot] + quickSort(right)
+    
+
+
+result = quickSort(bilangan)
+
+print(f"List setelah di sorting {result}")
