@@ -1,0 +1,38 @@
+import random
+
+bill = random.sample(range(1, 150), 15)
+print('=====Merge sort=====')
+print(f'sebelum sorting : {bill}')
+def merge_sort (bill):
+    if len(bill) > 1:
+        mid = len(bill) // 2
+        left_arr = bill[:mid]
+        right_arr = bill [mid:]
+
+        merge_sort(left_arr)
+        merge_sort(right_arr)
+
+        i = j = k = 0
+
+        while i < len(left_arr) and j < len(right_arr):
+            if left_arr[i] < right_arr[j]:
+                bill[k] = left_arr[i]
+                i += 1
+            else:
+                bill[k] = right_arr[j]
+                j += 1
+            k += 1
+
+        while (i < len(left_arr)):
+            bill[k] = left_arr[i]
+            i += 1
+            k += 1
+        
+        while (j < len(right_arr)):
+            bill[k] = right_arr[j]
+            j += 1
+            k += 1
+
+
+merge_sort (bill)
+print(f' sesudah sorting :{bill}')
