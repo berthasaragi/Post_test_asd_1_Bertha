@@ -1,6 +1,6 @@
 import random
 
-mylist = random.sample(range(1, 170), 18)
+mylist = random.sample(range(1, 170), 10)
 
 print('=====Shell sort=====')
 print (f'Sebelum Disorting : {mylist}') 
