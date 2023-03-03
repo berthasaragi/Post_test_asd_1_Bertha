@@ -1,6 +1,6 @@
 import random
 
-bilangan = random.sample(range(1, 170), 18)
+bilangan = random.sample(range(1, 170), 13)
 
 print('=====Quick sort=====')
 print(f"List Sebelum di Sorting {bilangan}")
